@@ -1,2 +1,4 @@
 *_rev*
-evaluacion*.ipynb
+*evaluacion*.ipynb
+.venv
+*__pycache__
