@@ -6,13 +6,16 @@ Cinvestav Unidad Saltillo
 
 Maestría en Ciencias en Ingeniería metalúrgica
 
+**Dr. Edgar Ivan Castro Cedeño**
+
+[edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
+
+
 </center>
 
 
 
-**Dr. Edgar Ivan Castro Cedeño**
 
-[edgar.castro@cinvestav.mx](mailto:edgar.castro@cinvestav.mx)
 
 
 ## Acerca de

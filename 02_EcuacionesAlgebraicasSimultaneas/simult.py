@@ -42,6 +42,8 @@ def gaussSeidel(A, b, x, relax=1.0, tol=None, niter=100):
     
     n = A.shape[0] # number of rows in matrix 
     iter = 0
+    print(x)
+    err = 0.0
     for iter in range(1,niter+1):
         x_old = x.copy()
         # bucle sobre las filas
@@ -51,11 +53,11 @@ def gaussSeidel(A, b, x, relax=1.0, tol=None, niter=100):
                 if j!=i:
                     sigma += A[i,j] * x[j]
             x[i] = (b[i] - sigma) / A[i,i]
-            
-        x = relax*x + (1-relax) * x_old
-        err = np.abs((x-x_old)/x)
-
-        if tol!=None and max(err) < tol:
+            # relax
+            x[i] = relax*x[i] + (1-relax) * x_old[i]
+            err = max((x[i]-x_old[i])/x[i], err)
+            x_old[i] = x[i]
+        if tol!=None and err < tol:
                 print(f"Convergence has been reached after {iter} iterations")
                 break
 
