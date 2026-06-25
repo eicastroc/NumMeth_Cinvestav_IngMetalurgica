@@ -42,9 +42,8 @@ def gaussSeidel(A, b, x, relax=1.0, tol=None, niter=100):
     
     n = A.shape[0] # number of rows in matrix 
     iter = 0
-    print(x)
-    err = 0.0
     for iter in range(1,niter+1):
+        err = 0.0
         x_old = x.copy()
         # bucle sobre las filas
         for i in range(n):
@@ -52,6 +51,7 @@ def gaussSeidel(A, b, x, relax=1.0, tol=None, niter=100):
             for j in range(n):
                 if j!=i:
                     sigma += A[i,j] * x[j]
+            #print(i, x[i], b[i], sigma, A[i,i])
             x[i] = (b[i] - sigma) / A[i,i]
             # relax
             x[i] = relax*x[i] + (1-relax) * x_old[i]
